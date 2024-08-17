@@ -1,11 +1,11 @@
 // controllers/employeeController.js
 
 import apiCall  from '../utils/httpClient.js'; 
-import { FIELD_USER_GET_URL } from '../config/config.js';
+import callMethod from '../utils/BX24.js';
 
 export const getEmployeeList = async (req, res) => {
     try {
-        const data = await apiCall(FIELD_USER_GET_URL, 'get');
+        const data = await callMethod('user.get');
         res.json(data);
     } catch (error) {
         console.error('Lỗi lấy employee list:', error.message);
