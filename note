@@ -1,0 +1,7 @@
+root@ubuntu:/home/minh/vong2# ngrok config add-authtoken SD43GXQFSVFB2LNQSAXXSHVM5G3O5U6M
+Authtoken saved to configuration file: /root/.config/ngrok/ngrok.yml
+old handle path: 
+
+ngrok url server: https://2904-20-2-233-202.ngrok-free.app/
+
+PC: https://7898-116-96-44-236.ngrok-free.app/

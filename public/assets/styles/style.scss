@@ -1,0 +1,43 @@
+$background-color: #f4f4f4;
+$highlight-color: #91dcff;
+$text-color: #333;
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: $background-color;
+    margin: 0;
+    padding: 20px;
+    text-align: center;
+}
+
+header {
+    margin-bottom: 20px; 
+    margin-top: 20px;
+    h1 {
+        color: $text-color;
+        margin-bottom: 10px;
+    }
+}
+
+.highlight {
+    background-color: $highlight-color;
+}
+
+.table-responsive{
+    .tabletitle{
+        font-size: larger;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.modal {
+    // bảng ở trong modal
+    th {
+        text-align: left;
+    }
+    
+    td {
+        text-align: right;
+    }
+}
+

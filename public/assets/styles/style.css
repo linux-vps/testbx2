@@ -1,0 +1,32 @@
+body {
+  font-family: "Arial", sans-serif;
+  background-color: #f4f4f4;
+  margin: 0;
+  padding: 20px;
+  text-align: center;
+}
+
+header {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+header h1 {
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.highlight {
+  background-color: #91dcff;
+}
+
+.table-responsive .tabletitle {
+  font-size: larger;
+  margin-bottom: 1.5rem;
+}
+
+.modal th {
+  text-align: left;
+}
+.modal td {
+  text-align: right;
+}/*# sourceMappingURL=style.css.map */
