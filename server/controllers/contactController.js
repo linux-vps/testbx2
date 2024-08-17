@@ -39,11 +39,8 @@ export const contactAdd = async (req, res) => {
         if (!contactData.fields || Object.keys(contactData.fields).length === 0) {
             return res.status(400).json({ error: 'missing fields or data' });
         }
-
-        // Gọi phương thức 'crm.contact.add' với dữ liệu liên hệ
         const data = await callMethod('crm.contact.add', contactData);
 
-        // Kiểm tra xem có lỗi nào không
         if (data.error) {
             return res.status(400).json({ error: data.error, message: 'Lỗi khi thêm liên hệ' });
         }
