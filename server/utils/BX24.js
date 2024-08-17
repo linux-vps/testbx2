@@ -9,23 +9,27 @@ import { BITRIX24_DOMAIN } from '../config/config.js';
  * @returns {Promise<Object>} - promise
  */
 
-async function callMethod(method, params = {}) {
-    let url = `https://${BITRIX24_DOMAIN}/rest/${method}.json`;
+async function callMethod(action, payload = {}) {
+    let url = `https://${BITRIX24_DOMAIN}/rest/${action}.json`;
 
     let token = getStoredRefreshToken();
     url = new URL(url);
     url.searchParams.append('auth', token);
+    // Lấy ra 'params' từ 'payload' nếu tồn tại
+    const params = payload.params || {};
+    delete payload.params; 
+    console.log(payload);
+    const addParams = new URLSearchParams(params).toString();
+    url = url+"&"+addParams;
+    console.log("Url: \n"+url);
     try {
-
-        const queryString = new URLSearchParams(params).toString();
-
         // call API
         const response = await fetch(url, {
             method: 'POST',
             headers: {
-                'Content-Type': 'application/x-www-form-urlencoded, application/json'
+                'Content-Type': 'application/json'
             },
-            body: queryString
+            body: JSON.stringify(payload)
         });
         if (!response.ok && response.status === 401) {
             // token hết hạn
@@ -35,24 +39,21 @@ async function callMethod(method, params = {}) {
             const response = await fetch(url, {
                 method: 'POST',
                 headers: {
-                    'Content-Type': 'application/x-www-form-urlencoded, application/json'
+                    'Content-Type': 'application/json'
                 },
-                body: queryString
+                body: JSON.stringify(payload)
             });
         }
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
 
-        // Phân tích phản hồi từ API
         const result = await response.json();
-
-        // Trả về kết quả
         return result;
     } catch (error) {
         console.error('Lỗi:', error);
         throw error;
     }
-}
+};
 
 export default callMethod;
