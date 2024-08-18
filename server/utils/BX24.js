@@ -1,6 +1,7 @@
 import fetch from 'node-fetch';
 import { getRefreshToken, getStoredRefreshToken } from '../services/authService.js';
 import { BITRIX24_DOMAIN } from '../config/config.js';
+import { response } from 'express';
 
 /**
  * Bitrix24 REST API.
@@ -12,37 +13,28 @@ import { BITRIX24_DOMAIN } from '../config/config.js';
 async function callMethod(action, payload = {}) {
     let url = `https://${BITRIX24_DOMAIN}/rest/${action}.json`;
 
-    let token = getStoredRefreshToken();
+    let token = await getStoredRefreshToken();
     url = new URL(url);
     url.searchParams.append('auth', token);
     // Lấy ra 'params' từ 'payload' nếu tồn tại
-    const params = payload.params || {};
-    delete payload.params; 
-    console.log(payload);
-    const addParams = new URLSearchParams(params).toString();
-    url = url+"&"+addParams;
-    console.log("Url: \n"+url);
+    const params = payload.params || null;
+    const id = payload.ID || null;
+    delete payload.params;
+    delete payload.id;
+
     try {
         // call API
-        const response = await fetch(url, {
-            method: 'POST',
-            headers: {
-                'Content-Type': 'application/json'
-            },
-            body: JSON.stringify(payload)
-        });
-        if (!response.ok && response.status === 401) {
+        let response = await callApi(url, payload, id, params);
+        // console.log(response)
+        if (response.status === 401 && response.statusText==='Unauthorized') {
+            console.log("Renew token");
             // token hết hạn
             token = await getRefreshToken();
             url.searchParams.set('auth', token);
+            // url.searchParams.append('auth', token);
+            
             // call API again
-            const response = await fetch(url, {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json'
-                },
-                body: JSON.stringify(payload)
-            });
+            response = await callApi(url, payload, id, params);
         }
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
@@ -55,5 +47,26 @@ async function callMethod(action, payload = {}) {
         throw error;
     }
 };
+
+async function callApi(url, payload, id, params){
+    let addParams = "";
+    let addId = "";
+    if (params!=null){
+        addParams = new URLSearchParams(params).toString();
+    }
+    if (id!=null){
+        addId = `id=${id}`
+    }
+    let finalUrl = `${url}&${addId}&${addParams}`;
+    console.log(finalUrl);
+    const response = await fetch(finalUrl, {
+        method: 'POST',
+        headers: {
+            'Content-Type': 'application/json'
+        },
+        body: JSON.stringify(payload)
+    });
+    return response;
+}
 
 export default callMethod;

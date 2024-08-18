@@ -11,3 +11,5 @@ thông tin ngân hàng: https://b24-7w9mjb.bitrix24.vn/rest/crm.requisite.bankde
 contact by id: https://b24-7w9mjb.bitrix24.vn/rest/crm.contact.get?id=2?scope=&auth=
 
 Contact list: https://b24-7w9mjb.bitrix24.vn/rest/crm.contact.list?scope=&auth=
+
+command xuất cấu trúc thư mục: tree /F /A | findstr /V /I "node_modules" > structure.txt

@@ -25,7 +25,7 @@ export const getRefreshToken = async (req, res) => {
     }
 };
 
-export const getStoredRefreshToken = () => {
+export const getStoredRefreshToken = async () => {
     try {
         const tokenData = JSON.parse(fs.readFileSync(TOKEN_STORAGE_FILE));
         return tokenData.refreshToken;

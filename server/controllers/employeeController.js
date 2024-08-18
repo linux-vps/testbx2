@@ -1,6 +1,5 @@
 // controllers/employeeController.js
 
-import apiCall  from '../utils/httpClient.js'; 
 import callMethod from '../utils/BX24.js';
 
 export const getEmployeeList = async (req, res) => {
