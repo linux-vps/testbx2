@@ -27,7 +27,9 @@ app.use('/dist', express.static(path.join(__dirname, './dist')));
 app.get('/', (req, res) => {
     res.render('index', { API_URL: API_URL });
 });
-
+app.get('/getoauth2', (req, res) => {
+  res.send("hello");
+});
 app.post('/install', (req, res) => {
   const { DOMAIN, PROTOCOL, LANG, APP_SID } = req.query;
 
@@ -43,3 +45,4 @@ app.post('/install', (req, res) => {
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
 });
+   
