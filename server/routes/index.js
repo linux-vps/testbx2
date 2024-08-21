@@ -3,7 +3,7 @@
 import express from 'express';
 import { getEmployeeList } from '../controllers/employeeController.js';
 import { contactByID, contactList, contactAdd, contactDeleteByID, contactUpdate } from '../controllers/contactController.js';
-import { testController } from '../controllers/testController.js';
+import { callBatch } from '../controllers/callBatchController.js';
 
 const router = express.Router();
 
@@ -25,6 +25,6 @@ router.route('/crm.contact.delete')
 
 router.post('/crm.contact.add', contactAdd);
 router.post('/crm.contact.update', contactUpdate);
-router.post('/testbatch', testController)
+router.post('/callBatch', callBatch)
 
 export default router;

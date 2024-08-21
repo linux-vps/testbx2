@@ -36,7 +36,7 @@ const handleError = (res, error, status = 500, statusText = 'Internal server') =
 
 export const contactList = async (req, res) => {
     try {
-        const response = await callMethod('crm.contact.list');
+        const response = await callMethod('crm.contact.list'); // lấy danh sách
         const data = await response.json();
         if (!response.ok){
             return handleError(res, data, response.status, response.statusText);
