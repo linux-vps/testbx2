@@ -4,10 +4,10 @@ import MiniCssExtractPlugin from 'mini-css-extract-plugin';
 export default {
     entry: {
         main: './assets/js/script.js',
-        styles: './assets/styles/style.scss',
+        styles: './assets/css/style.scss',
     },
     output: {
-        filename: '[name].bundle.js', // create `main.bundle.js`, `styles.bundle.js` 
+        filename: '[name].bundle.js', // create `main.bundle.js`, `css.bundle.js` 
         path: path.resolve(process.cwd(), 'dist'),
         publicPath: '/dist/',
     },
@@ -42,7 +42,7 @@ export default {
     },
     plugins: [
         new MiniCssExtractPlugin({
-            filename: '[name].styles.css', // create `styles.styles.css`
+            filename: '[name].styles.css', // create `css.styles.css`
         }),
     ],
     devServer: {

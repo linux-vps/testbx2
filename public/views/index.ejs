@@ -3,46 +3,341 @@
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Danh Sách Nhân Viên</title>
-    <link href="https://cdn.datatables.net/v/dt/dt-2.1.3/r-3.0.2/sb-1.7.1/sl-2.0.4/datatables.min.css" rel="stylesheet">
-    <!-- Latest compiled and minified CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
-
-    <!-- jQuery library -->
-    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.1/dist/jquery.slim.min.js"></script>
-
-    <!-- Popper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <title>Danh Sách Liên H</title>
+    <script
+    src="https://code.jquery.com/jquery-3.7.1.slim.js"
+    integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
+    crossorigin="anonymous"></script>
+    <link href="https://cdn.datatables.net/v/dt/dt-2.1.4/af-2.7.0/b-3.1.1/b-html5-3.1.1/r-3.0.2/sb-1.8.0/sp-2.3.2/datatables.min.css" rel="stylesheet">
 
     <!-- Latest compiled JavaScript -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/js/bootstrap.bundle.min.js"></script>
 
     <link rel="stylesheet" href="/dist/styles.styles.css">
 
+      <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.gstatic.com" rel="preconnect">
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Nunito:300,300i,400,400i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/boxicons/css/boxicons.min.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.snow.css" rel="stylesheet">
+  <link href="assets/vendor/quill/quill.bubble.css" rel="stylesheet">
+  <link href="assets/vendor/remixicon/remixicon.css" rel="stylesheet">
+  <link href="assets/vendor/simple-datatables/style.css" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="assets/css/style.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: NiceAdmin
+  * Template URL: https://bootstrapmade.com/nice-admin-bootstrap-admin-html-template/
+  * Updated: Apr 20 2024 with Bootstrap v5.3.3
+  * Author: BootstrapMade.com
+  * License: https://bootstrapmade.com/license/
+  ======================================================== -->
 
 
 </head>
 
-<body>
-    <header>
-        <h1>Danh Sách Nhân Viên</h1>
-    </header>
-    <section class="useractions">
-        <button type="button" class="btn btn-primary mb-2" id="refreshButton" class="refresh-button">Refresh</button>
-        <button type="button" class="btn btn-primary mb-2" id="viewEmployeeButton" class="view-employee-button" disabled>View employee</button>
-    </section>
+<body class="toggle-sidebar">
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header fixed-top d-flex align-items-center">
+
+    <div class="d-flex align-items-center justify-content-between">
+      <a href="index.html" class="logo d-flex align-items-center">
+        <img src="assets/img/logo.png" alt="">
+        <span class="d-none d-lg-block">NiceAdmin</span>
+      </a>
+      <!-- <i class="bi bi-list toggle-sidebar-btn"></i> -->
+    </div><!-- End Logo -->
+
+
+    <nav class="header-nav ms-auto">
+      <ul class="d-flex align-items-center">
+
+        <li class="nav-item d-block d-lg-none">
+          <a class="nav-link nav-icon search-bar-toggle " href="#">
+            <i class="bi bi-search"></i>
+          </a>
+        </li><!-- End Search Icon-->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-bell"></i>
+            <span class="badge bg-primary badge-number">4</span>
+          </a><!-- End Notification Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow notifications">
+            <li class="dropdown-header">
+              You have 4 new notifications
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-exclamation-circle text-warning"></i>
+              <div>
+                <h4>Lorem Ipsum</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>30 min. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-x-circle text-danger"></i>
+              <div>
+                <h4>Atque rerum nesciunt</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>1 hr. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-check-circle text-success"></i>
+              <div>
+                <h4>Sit rerum fuga</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>2 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="notification-item">
+              <i class="bi bi-info-circle text-primary"></i>
+              <div>
+                <h4>Dicta reprehenderit</h4>
+                <p>Quae dolorem earum veritatis oditseno</p>
+                <p>4 hrs. ago</p>
+              </div>
+            </li>
+
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+            <li class="dropdown-footer">
+              <a href="#">Show all notifications</a>
+            </li>
+
+          </ul><!-- End Notification Dropdown Items -->
+
+        </li><!-- End Notification Nav -->
+
+        <li class="nav-item dropdown">
+
+          <a class="nav-link nav-icon" href="#" data-bs-toggle="dropdown">
+            <i class="bi bi-chat-left-text"></i>
+            <span class="badge bg-success badge-number">3</span>
+          </a><!-- End Messages Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow messages">
+            <li class="dropdown-header">
+              You have 3 new messages
+              <a href="#"><span class="badge rounded-pill bg-primary p-2 ms-2">View all</span></a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Maria Hudson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>4 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>Anna Nelson</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>6 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="message-item">
+              <a href="#">
+                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <div>
+                  <h4>David Muldon</h4>
+                  <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
+                  <p>8 hrs. ago</p>
+                </div>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li class="dropdown-footer">
+              <a href="#">Show all messages</a>
+            </li>
+
+          </ul><!-- End Messages Dropdown Items -->
+
+        </li><!-- End Messages Nav -->
+
+        <li class="nav-item dropdown pe-3">
+
+          <a class="nav-link nav-profile d-flex align-items-center pe-0" href="#" data-bs-toggle="dropdown">
+            <img src="assets/img/profile-img.jpg" alt="Profile" class="rounded-circle">
+            <span class="d-none d-md-block dropdown-toggle ps-2">K. Anderson</span>
+          </a><!-- End Profile Iamge Icon -->
+
+          <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow profile">
+            <li class="dropdown-header">
+              <h6>Kevin Anderson</h6>
+              <span>Web Designer</span>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-person"></i>
+                <span>My Profile</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="users-profile.html">
+                <i class="bi bi-gear"></i>
+                <span>Account Settings</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="pages-faq.html">
+                <i class="bi bi-question-circle"></i>
+                <span>Need Help?</span>
+              </a>
+            </li>
+            <li>
+              <hr class="dropdown-divider">
+            </li>
+
+            <li>
+              <a class="dropdown-item d-flex align-items-center" href="#">
+                <i class="bi bi-box-arrow-right"></i>
+                <span>Sign Out</span>
+              </a>
+            </li>
+
+          </ul><!-- End Profile Dropdown Items -->
+        </li><!-- End Profile Nav -->
+
+      </ul>
+    </nav><!-- End Icons Navigation -->
+
+  </header><!-- End Header -->
+
+
+  <main id="main" class="main">
+
+    <div class="pagetitle">
+      <h1>Danh sách liên hệ</h1>
+      <nav>
+        <ol class="breadcrumb">
+          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+          <li class="breadcrumb-item">CRM</li>
+          <li class="breadcrumb-item active">Contact</li>
+        </ol>
+      </nav>
+      <div class="col-sm-12 col" style="float: right;">
+        <button type="button" class="btn btn-primary mb-2" data-bs-toggle="modal" style="float: right;"
+          data-bs-target="#Add_Contact">
+          Thêm liên hệ
+        </button>
+      </div>
+    </div><!-- End Page Title -->
+
+
+
     <div id="loadingIndicator" class="loading-indicator">Loading ...</div>
-    <section class="section w-50 d-block mx-auto">
+    <section class="section d-block mx-auto">
         <div class="row">
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="employeeTable datatable table table-hover table-center mb-0">
-                    <div class="tabletitle"><strong>Name of employees</strong> </div>
-                    <tbody id="employeeTableBody">
-  
+                  <table class="contactTable datatable table table-hover table-center mb-0">
+                    <thead>
+                      <th data-field="column1" class="sorting">#</th>
+                      <th data-field="column2" class="sorting">Tên</th>
+                      <th data-field="column3" class="sorting">Địa chỉ</th>
+                      <th data-field="column4" class="sorting">SĐT</th>
+                      <th data-field="column5" class="sorting">Email</th>
+                      <th data-field="column6" class="sorting">Website</th>
+                      <th data-field="column7" class="sorting">Tên ngân hàng</th>
+                      <th data-field="column8" class="sorting">Số tài khoản</th>
+                      <th data-field="column9" class="sorting"></th>
+                    </thead>
+                    <tbody id="contactTableBody">
+                      <tr>
+                        <td>3</td>
+                        <td>Hoàng Hải Trung 1</td>
+                        <td>Cầu Diễn, Minh Khai, Bắc Từ Liêm, Hà Nội</td>
+                        <td>0888999999</td>
+                        <td>hhtfsafsfasf@gmail.com</td>
+                        <td>hht.edu.id.vn</td>
+                        <td>Vietcombank</td>
+                        <td>654776533332</td>
+                        <td>
+                          <div class="actions" style="display: flex;">
+                            
+                            <a class="btn btn-sm bg-success-light btn-edit" data-toggle="modal" style="margin-right: 5px;"
+                              data-id="" data-name="" data-description=""
+                              href="#Edit_contact">
+                              <i class="fe fe-pencil"></i> Sửa
+                            </a>
+                            <a data-toggle="modal" href="#deleteConfirmationModal" data-id=""
+                              class="btn btn-sm bg-danger-light btn-delete-speciality">
+                              <i class="fe fe-trash"></i> Xoá
+                            </a>
+                          </div>
+                        </td>
+                      </tr>
                   </tbody>
                   </table>
                 </div>
@@ -52,117 +347,182 @@
         </div>
       </section>
 
-    <!-- Modal  -->
-  <div class="modal" id="employeeModal" tabindex="-1" role="dialog"  aria-hidden="true">
-    <div class="modal-dialog">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" >Thông tin nhân viên</h5>
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
+  </main><!-- End #main -->
+<!-- Add Modal -->
+<div class="modal fade" id="Add_Contact" aria-hidden="true" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Thêm liên hệ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row form-row">
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              <label>Họ và tên</label>
+              <input type="text" class="form-control" name="studentName" id="studentName">
+            </div>
+          </div>
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              <label>SĐT phụ huynh</label>
+              <input type="text" class="form-control" name="parentPhone" id="parentPhone">
+            </div>
+          </div>
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              <label>Tên phụ huynh</label>
+              <input type="text" class="form-control" name="parentName" id="parentName">
+            </div>
+          </div>
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              <label>Email Phụ huynh</label>
+              <input type="email" class="form-control" name="parentEmail" id="parentEmail">
+            </div>
+          </div>
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              <label>Ghi chú</label>
+              <input type="text" class="form-control" name="note" id="note">
+            </div>
+          </div>
         </div>
-        <div class="modal-body">
-          <img id="employeePhoto" src="" class="rounded-circle img-fluid w-25" alt="Ảnh đại diện" style="object-fit: cover;">
-          <div id="employeeDetails">Chưa có thông tin</div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-          
-        </div>
-      </div>  
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" id="add-btn" class="btn btn-primary">OK</button>
+      </div>
     </div>
   </div>
+</div>
+<!-- /ADD Modal -->
+
+<!-- EDIT Modal -->
+<div class="modal fade" id="Edit_contact" aria-hidden="true" role="dialog">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">Sửa thông tin liên hệ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <div class="row form-row">
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              <label>Họ và tên</label>
+              <input type="text" class="form-control" name="studentName" id="editStudentName">
+            </div>
+          </div>
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              <label>SĐT phụ huynh</label>
+              <input type="text" class="form-control" name="parentPhone" id="editParentPhone">
+            </div>
+          </div>
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              <label>Tên phụ huynh</label>
+              <input type="text" class="form-control" name="parentName" id="editParentName">
+            </div>
+          </div>
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              <label>Email Phụ huynh</label>
+              <input type="email" class="form-control" name="parentEmail" id="editParentEmail">
+            </div>
+          </div>
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              <label>Ghi chú</label>
+              <input type="text" class="form-control" name="note" id="editNote">
+            </div>
+          </div>
+          <input type="hidden" id="editRowId">
+          <input type="hidden" id="editClassname">
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="submit" id="edit-btn" class="btn btn-primary">OK</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /EDIT Modal -->
+
+<!-- DELETE Confirmation Modal -->
+<div class="modal fade" id="deleteConfirmationModal" tabindex="-1" aria-labelledby="deleteConfirmationModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="deleteConfirmationModalLabel">Xác nhận xoá</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        Bạn có chắc chắn muốn xoá liên hệ này không?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Hủy</button>
+        <button type="button" id="confirm-delete-btn" class="btn btn-danger">Xoá</button>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /DELETE Confirmation Modal -->
 
 
-    <script src="https://cdn.datatables.net/v/dt/dt-2.1.3/r-3.0.2/sb-1.7.1/sl-2.0.4/datatables.min.js"></script>
+
+<!-- Modal thông báo -->
+<div class="modal fade" id="resultModal" tabindex="-1" aria-labelledby="resultModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="resultModalLabel">Kết quả thêm liên hệ</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        <p id="resultMessage"></p>
+        <p id="errorMessage" style="color: red;"></p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- /Modal thông báo -->
+
+
+
+
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+    <div class="copyright">
+      &copy; Copyright <strong><span>NiceAdmin</span></strong>. All Rights Reserved
+    </div>
+    <div class="credits">
+      Designed by <a href="https://bootstrapmade.com/">BootstrapMade;</a>
+      <!-- Edited by <a href="https://github.com/dnminh2003">dnminh2003</a> -->
+    </div>
+  </footer><!-- End Footer -->
+    <!-- Vendor JS Files -->
+    <script src="assets/vendor/apexcharts/apexcharts.min.js"></script>
+    <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="assets/vendor/chart.js/chart.umd.js"></script>
+    <script src="assets/vendor/echarts/echarts.min.js"></script>
+    <script src="assets/vendor/quill/quill.js"></script>
+    <script src="assets/vendor/simple-datatables/simple-datatables.js"></script>
+    <script src="assets/vendor/tinymce/tinymce.min.js"></script>
+    <script src="assets/vendor/php-email-form/validate.js"></script>
+
+    <!-- Template Main JS File -->
+    <script src="assets/js/main.js"></script>
+
+    <script src="https://cdn.datatables.net/v/dt/dt-2.1.4/af-2.7.0/b-3.1.1/b-html5-3.1.1/r-3.0.2/sb-1.8.0/sp-2.3.2/datatables.min.js"></script>
     <script src="/dist/main.bundle.js"></script>
     <script src="/dist/styles.bundle.js"></script>
 
-    <script>
-      const apiUrl = '<%= API_URL %>';
-    
-      document.addEventListener('DOMContentLoaded', function() {
 
-        // load data and refresh
-        async function fetchEmployees() {
-            try {
-                document.getElementById('loadingIndicator').style.display = 'block';
-                const response = await fetch(apiUrl + '/employees');
-                const data = await response.json();
-                const employees = data.result;
-                const tbody = document.getElementById('employeeTableBody');
-                tbody.innerHTML = '';
-    
-                employees.forEach((employee, index) => {
-                    const tr = document.createElement('tr');
-                    tr.dataset.index = index;
-                    tr.dataset.employee = JSON.stringify(employee);
-                    tr.innerHTML = `
-                        <!-- <td>${index + 1}</td> -->
-                        <td>${employee.LAST_NAME} ${employee.NAME}</td>
-                    `;
-                    tr.addEventListener('click', () => {
-
-                        // Highlight selected row
-                        tr.classList.add('highlight');
-                        highlightedEmployee = employee;
-                        document.getElementById('viewEmployeeButton').disabled = false; // Enable view button
-                    });
-                    tbody.appendChild(tr);
-                });
-            } catch (error) {
-                console.error('Error fetching employees:', error);
-            } finally {
-                document.getElementById('loadingIndicator').style.display = 'none';
-            }
-        }
-    
-        // Fetch employees on page load
-        fetchEmployees();
-    
-        // Set up event listeners
-        document.getElementById('refreshButton').addEventListener('click', fetchEmployees);
-    
-          viewEmployeeButton.addEventListener('click', () => {
-            if (highlightedEmployee) {
-              employeeDetails.innerHTML = `
-                      <table class="table table table-hover table-center mb-0">
-                          <tbody>
-                              <tr>
-                                  <th>Tên</th>
-                                  <td>${highlightedEmployee.LAST_NAME} ${highlightedEmployee.NAME}</td>
-                              </tr>
-                              <tr>
-                                  <th>Email</th>
-                                  <td>${highlightedEmployee.EMAIL}</td>
-                              </tr>
-                              <tr>
-                                  <th>Ngày đăng ký</th>
-                                  <td>${new Date(highlightedEmployee.DATE_REGISTER).toLocaleDateString()}</td>
-                              </tr>
-                              <tr>
-                                  <th>Cuối cùng đăng nhập</th>
-                                  <td>${new Date(highlightedEmployee.LAST_LOGIN).toLocaleDateString()}</td>
-                              </tr>
-                              <tr>
-                                  <th>Ngày sinh</th>
-                                  <td>${highlightedEmployee.PERSONAL_BIRTHDAY || 'Chưa có thông tin'}</td>
-                              </tr>
-                              <tr>
-                                  <th>Giới tính</th>
-                                  <td>${highlightedEmployee.PERSONAL_GENDER || 'Chưa có thông tin'}</td>
-                              </tr>
-                          </tbody>
-                      </table>
-                  `;
-                employeePhoto.src = highlightedEmployee.PERSONAL_PHOTO || '/assets/img/noneavt.png';
-                $('#employeeModal').modal('show');
-            }
-        });
-    });
-    
-    </script>
     
 </body>
     

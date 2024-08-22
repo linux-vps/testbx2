@@ -20,17 +20,78 @@ export const callBatch = async (req, res) =>{
     for (let key in body.cmd) {
         let cmdData = body.cmd[key];
         let method = cmdData.method;
+        
         let id = cmdData.id;
         let fields = cmdData.fields;
+        let order = cmdData.order;
+        let filter = cmdData.filter;
+        let select = cmdData.select;
+        let params = cmdData.params;
+
+        // Khởi tạo query string với method
+        payload.cmd[key] = `${method}?`;
+
+        // Thêm ID nếu có
+        if (id) {
+            payload.cmd[key] += `ID=${id}&`;
+        }
+
+        // // Thêm fields nếu có
+        // if (fields) {
+        //     let params = Object.entries(fields)
+        //         .map(([fieldKey, fieldValue]) => `fields[${fieldKey}]=${encodeURIComponent(fieldValue)}`)
+        //         .join('&');
+        //     payload.cmd[key] += `${params}&`;
+        // }
 
         if (fields) {
-            let params = Object.entries(fields)
-                .map(([fieldKey, fieldValue]) => `fields[${fieldKey}]=${encodeURIComponent(fieldValue)}`)
+            let fieldParams = Object.entries(fields)
+                .map(([fieldKey, fieldValue]) => {
+                    if (Array.isArray(fieldValue)) {
+                        // Trường hợp đặc biệt xử lý mảng các đối tượng
+                        return fieldValue.map((item, index) => {
+                            return Object.entries(item)
+                                .map(([subKey, subValue]) => `fields[${fieldKey}][${index}][${subKey}]=${encodeURIComponent(subValue)}`)
+                                .join('&');
+                        }).join('&');
+                    } else {
+                        return `fields[${fieldKey}]=${encodeURIComponent(fieldValue)}`;
+                    }
+                })
                 .join('&');
-                payload.cmd[key] = `${method}?ID=${id}&${params}`;
-        } else {
-            payload.cmd[key] = `${method}?id=${id}`;
+            payload.cmd[key] += `${fieldParams}&`;
         }
+
+        // Thêm order nếu có
+        if (order) {
+            let params = Object.entries(order)
+                .map(([orderKey, orderValue]) => `order[${orderKey}]=${encodeURIComponent(orderValue)}`)
+                .join('&');
+            payload.cmd[key] += `${params}&`;
+        }
+
+        // Thêm filter nếu có
+        if (filter) {
+            let params = Object.entries(filter)
+                .map(([filterKey, filterValue]) => `filter[${filterKey}]=${encodeURIComponent(filterValue)}`)
+                .join('&');
+            payload.cmd[key] += `${params}&`;
+        }
+
+        // Thêm select nếu có
+        if (select) {
+            let params = select
+                .map(item => `select[]=${encodeURIComponent(item)}`)
+                .join('&');
+            payload.cmd[key] += `${params}&`;
+        }
+
+        // Thêm select nếu có
+        if (params) {
+            let params2 = new URLSearchParams(params).toString();
+            payload.cmd[key] += `${params2}&`;
+        }
+        
     }
     console.log(payload);
 

@@ -20,3 +20,65 @@ BITRIX24_DOMAIN: b24-7w9mjb.bitrix24.vn
 
 
 6400ea66007056210070561f00000001403807f6ce215b23fcb7ff02eca7ee036c2254
+
+
+
+
+    <section class="useractions">
+        <button type="button" class="btn btn-primary mb-2" id="refreshButton" class="refresh-button">Refresh</button>
+        <button type="button" class="btn btn-primary mb-2" id="viewEmployeeButton" class="view-employee-button" disabled>View employee</button>
+    </section>
+    <div id="loadingIndicator" class="loading-indicator">Loading ...</div>
+    <section class="section d-block mx-auto">
+        <div class="row">
+          <div class="col-lg-12">
+            <div class="card">
+              <div class="card-body">
+                <div class="table-responsive">
+                  <table class="employeeTable datatable table table-hover table-center mb-0">
+                    <div class="tabletitle"><strong>Name of employees</strong> </div>
+                    <thead>
+                      <th>ID</th>
+                      <th>Tên</th>
+                      <th>Địa chỉ</th>
+                      <th>SĐT</th>
+                      <th>Email</th>
+                      <th>Website</th>
+                      <th>Banking</th>
+                    </thead>
+                    <tbody id="employeeTableBody">
+                      <tr>
+                        <td>3</td>
+                        <td>Hoàng Hải Trung 1</td>
+                        <td>Cầu Diễn, Minh Khai, Bắc Từ Liêm, Hà Nội</td>
+                        <td>0888999999</td>
+                        <td>hhtfsafsfasf@gmail.com</td>
+                        <td>hht.edu.id.vn</td>
+                        <td><button type="bunton">Bankking...</button></td>
+                      </tr>
+                      <tr>
+                        <td>4</td>
+                        <td>Hoàng Hải Trung 1</td>
+                        <td>Cầu Diễn, Minh Khai, Bắc Từ Liêm, Hà Nội</td>
+                        <td>0888999999</td>
+                        <td>hhtfsafsfasf@gmail.com</td>
+                        <td>hht.edu.id.vn</td>
+                        <td><button type="bunton">Bankking...</button></td>
+                      </tr>
+                      <tr>
+                        <td>5</td>
+                        <td>Hoàng Hải Trung 1</td>
+                        <td>Cầu Diễn, Minh Khai, Bắc Từ Liêm, Hà Nội</td>
+                        <td>0888999999</td>
+                        <td>hhtfsafsfasf@gmail.com</td>
+                        <td>hht.edu.id.vn</td>
+                        <td><button type="bunton">Bankking...</button></td>
+                      </tr>
+                  </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
