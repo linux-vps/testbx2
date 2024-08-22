@@ -8,7 +8,7 @@ const handleError = (res, error, status = 500, statusText = 'Internal server') =
         error: error, 
         error_description: 'callBatch error', 
         message: 'Báo cáo lỗi này cho lập trình viên' });
-};
+}; 
 
 export const callBatch = async (req, res) =>{
     const body = req.body;

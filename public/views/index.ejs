@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <title>Danh Sách Liên H</title>
+    <title>Danh Sách Liên Hệ</title>
     <script
     src="https://code.jquery.com/jquery-3.7.1.slim.js"
     integrity="sha256-UgvvN8vBkgO0luPSUl2s8TIlOSYRoGFAX4jlCIm9Adc="
@@ -163,7 +163,7 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="assets/img/messages-1.jpg" alt="" class="rounded-circle">
+                <img src="" alt="" class="rounded-circle">
                 <div>
                   <h4>Maria Hudson</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -177,7 +177,7 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="assets/img/messages-2.jpg" alt="" class="rounded-circle">
+                <img src="" alt="" class="rounded-circle">
                 <div>
                   <h4>Anna Nelson</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -191,7 +191,7 @@
 
             <li class="message-item">
               <a href="#">
-                <img src="assets/img/messages-3.jpg" alt="" class="rounded-circle">
+                <img src="" alt="" class="rounded-circle">
                 <div>
                   <h4>David Muldon</h4>
                   <p>Velit asperiores et ducimus soluta repudiandae labore officia est ut...</p>
@@ -292,16 +292,13 @@
       </div>
     </div><!-- End Page Title -->
 
-
-
-    <div id="loadingIndicator" class="loading-indicator">Loading ...</div>
     <section class="section d-block mx-auto">
         <div class="row">
           <div class="col-lg-12">
             <div class="card">
               <div class="card-body">
                 <div class="table-responsive">
-                  <table class="contactTable datatable table table-hover table-center mb-0">
+                  <table id="contactTable" class="contactTable datatable table table-hover table-center mb-0">
                     <thead>
                       <th data-field="column1" class="sorting">#</th>
                       <th data-field="column2" class="sorting">Tên</th>
@@ -313,32 +310,20 @@
                       <th data-field="column8" class="sorting">Số tài khoản</th>
                       <th data-field="column9" class="sorting"></th>
                     </thead>
-                    <tbody id="contactTableBody">
+
+                    <!-- <tfoot>
                       <tr>
-                        <td>3</td>
-                        <td>Hoàng Hải Trung 1</td>
-                        <td>Cầu Diễn, Minh Khai, Bắc Từ Liêm, Hà Nội</td>
-                        <td>0888999999</td>
-                        <td>hhtfsafsfasf@gmail.com</td>
-                        <td>hht.edu.id.vn</td>
-                        <td>Vietcombank</td>
-                        <td>654776533332</td>
-                        <td>
-                          <div class="actions" style="display: flex;">
-                            
-                            <a class="btn btn-sm bg-success-light btn-edit" data-toggle="modal" style="margin-right: 5px;"
-                              data-id="" data-name="" data-description=""
-                              href="#Edit_contact">
-                              <i class="fe fe-pencil"></i> Sửa
-                            </a>
-                            <a data-toggle="modal" href="#deleteConfirmationModal" data-id=""
-                              class="btn btn-sm bg-danger-light btn-delete-speciality">
-                              <i class="fe fe-trash"></i> Xoá
-                            </a>
-                          </div>
-                        </td>
+                      <th>#</th>
+                      <th>Tên</th>
+                      <th>Địa chỉ</th>
+                      <th>SĐT</th>
+                      <th>Email</th>
+                      <th>Website</th>
+                      <th>Tên ngân hàng</th>
+                      <th>Số tài khoản</th>
+                      <th></th>
                       </tr>
-                  </tbody>
+                  </tfoot> -->
                   </table>
                 </div>
               </div>
@@ -360,36 +345,68 @@
         <div class="row form-row">
           <div class="col-12 col-sm-12">
             <div class="form-group">
-              <label>Họ và tên</label>
-              <input type="text" class="form-control" name="studentName" id="studentName">
+              <label>Họ</label>
+              <input type="text" class="form-control" name="lastName" id="lastName">
             </div>
           </div>
           <div class="col-12 col-sm-12">
             <div class="form-group">
-              <label>SĐT phụ huynh</label>
-              <input type="text" class="form-control" name="parentPhone" id="parentPhone">
+              <label>Tên</label>
+              <input type="text" class="form-control" name="firstName" id="firstName">
             </div>
           </div>
           <div class="col-12 col-sm-12">
             <div class="form-group">
-              <label>Tên phụ huynh</label>
-              <input type="text" class="form-control" name="parentName" id="parentName">
+              <label>Phường/Xã</label>
+              <input type="text" class="form-control" name="ward" id="ward">
             </div>
           </div>
           <div class="col-12 col-sm-12">
             <div class="form-group">
-              <label>Email Phụ huynh</label>
-              <input type="email" class="form-control" name="parentEmail" id="parentEmail">
+              <label>Quận/Huyện</label>
+              <input type="text" class="form-control" name="district" id="district">
             </div>
           </div>
           <div class="col-12 col-sm-12">
             <div class="form-group">
-              <label>Ghi chú</label>
-              <input type="text" class="form-control" name="note" id="note">
+              <label>Tỉnh/Thành phố</label>
+              <input type="text" class="form-control" name="city" id="city">
+            </div>
+          </div>
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              <label>Số điện thoại</label>
+              <input type="number" class="form-control" name="phoneNumber" id="phoneNumber">
+            </div>
+          </div>
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              <label>Email</label>
+              <input type="email" class="form-control" name="email" id="email">
+            </div>
+          </div>
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              <label>Website</label>
+              <input type="text" class="form-control" name="website" id="website">
+            </div>
+          </div>
+          <div><br>Thông tin ngân hàng<br></div>
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              <label>Tên ngân hàng</label>
+              <input type="text" class="form-control" name="bankName" id="bankName">
+            </div>
+          </div>
+          <div class="col-12 col-sm-12">
+            <div class="form-group">
+              <label>Số tài khoản</label>
+              <input type="number" class="form-control" name="accountNumber" id="accountNumber">
             </div>
           </div>
         </div>
       </div>
+      
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         <button type="button" id="add-btn" class="btn btn-primary">OK</button>
@@ -516,12 +533,58 @@
     <script src="assets/vendor/php-email-form/validate.js"></script>
 
     <!-- Template Main JS File -->
-    <script src="assets/js/main.js"></script>
+    <!-- <script src="assets/js/main.js"></script> -->
 
     <script src="https://cdn.datatables.net/v/dt/dt-2.1.4/af-2.7.0/b-3.1.1/b-html5-3.1.1/r-3.0.2/sb-1.8.0/sp-2.3.2/datatables.min.js"></script>
     <script src="/dist/main.bundle.js"></script>
     <script src="/dist/styles.bundle.js"></script>
+    <script>
+      async function fetchData() {
+        let response = await fetch("http://localhost:5000/api/getData");
+        const data = await response.json();
+        if ($.fn.dataTable.isDataTable('#contactTable')) {
+          $('#contactTable').DataTable().clear().destroy();
+        }
+        await displayData(data);
+        return data;
+      };
 
+      async function displayData(data) {
+        // Destroy existing DataTable instance if it exists
+        if ($.fn.dataTable.isDataTable('#contactTable')) {
+          $('#contactTable').DataTable().clear().destroy();
+        }
+        new DataTable('#contactTable', {
+          data: data,
+          columns: [
+            { data: null, render: (data, type, row, meta) => meta.row + 1 }, // Cột số thứ tự
+            { data: 'NAME' },
+            { data: 'ADDRESS' },
+            { data: 'PHONE' },
+            { data: 'EMAIL' },
+            { data: 'WEB' },
+            { data: 'RQ_BANK_NAME' },
+            { data: 'RQ_ACC_NUM' },
+            {
+              data: null,
+              render: (data, type, row) => `
+                    <div class="actions" style="display: flex;">
+                        <a class="btn btn-sm bg-success-light btn-edit" data-toggle="modal" style="margin-right: 5px;" 
+                          data-id="${row.ID}" data-name="${row.NAME}" href="#Edit_contact">
+                            <i class="fe fe-pencil"></i> Sửa
+                        </a>
+                        <a data-toggle="modal" href="#deleteConfirmationModal" data-id="${row.ID}" 
+                          class="btn btn-sm bg-danger-light btn-delete-speciality">
+                            <i class="fe fe-trash"></i> Xoá
+                        </a>
+                    </div>
+                `
+            }
+          ]
+        });
+      }
+      document.addEventListener('DOMContentLoaded', fetchData);
+    </script>
 
     
 </body>
