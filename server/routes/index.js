@@ -4,7 +4,7 @@ import express from 'express';
 import { getEmployeeList } from '../controllers/employeeController.js';
 import { contactByID, contactList, contactAdd, contactDeleteByID, contactUpdate } from '../controllers/contactController.js';
 import { callBatch } from '../controllers/callBatchController.js';
-import { getData, addData, updateData } from '../controllers/tableData.js';
+import { getData, addData, updateData, deleteData } from '../controllers/tableData.js';
 
 const router = express.Router();
 
@@ -31,4 +31,5 @@ router.post('/callBatch', callBatch);
 router.get('/getData', getData);
 router.post('/addData', addData);
 router.put('/updateData', updateData);
+router.delete('/deleteData', deleteData);
 export default router;

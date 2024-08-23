@@ -124,26 +124,42 @@ export const updateData = async (req, res) => {
     }
 };
 
-export const deteleData = async (req, res) => {
-    const { lastName, name, ward, district, city, province, phoneNumber, email, website, bankName, accountNumber } = req.body;
-
-    const payload = {
-        halt: 0,
-        cmd: {
-            addContact: `crm.contact.add?fields[LAST_NAME]=${lastName}&fields[NAME]=${name}&fields[ADDRESS]=${ward}&fields[ADDRESS_2]=${district}&fields[ADDRESS_CITY]=${city}&fields[ADDRESS_PROVINCE]=${province}&fields[OPENED]=Y&fields[ASSIGNED_BY_ID]=1&fields[TYPE_ID]=CLIENT&fields[SOURCE_ID]=SELF&fields[EMAIL][0][VALUE_TYPE]=WORK&fields[EMAIL][0][VALUE]=${email}&fields[EMAIL][0][TYPE_ID]=EMAIL&fields[WEB][0][VALUE_TYPE]=WORK&fields[WEB][0][VALUE]=${website}&fields[WEB][0][TYPE_ID]=WEB&fields[PHONE][0][VALUE_TYPE]=WORK&fields[PHONE][0][VALUE]=${phoneNumber}&fields[PHONE][0][TYPE_ID]=PHONE&REGISTER_SONET_EVENT=Y`,
-            addRequisite: `crm.requisite.add?fields[RQ_CONTACT]=%24result%5BaddContact%5D&fields[ORIGINATOR_ID]=%24result%5BaddContact%5D&fields[ENTITY_TYPE_ID]=3&fields[ENTITY_ID]=%24result%5BaddContact%5D&fields[PRESET_ID]=1&fields[NAME]=Banking-details&fields[XML_ID]=null&fields[ACTIVE]=Y&fields[SORT]=100`,
-            addBankdetail: `crm.requisite.bankdetail.add?fields[RQ_CONTACT]=%24result%5BaddContact%5D&fields[ORIGINATOR_ID]=%24result%5BaddContact%5D&fields[ENTITY_ID]=%24result%5BaddRequisite%5D&fields[NAME]=Bank-details&fields[RQ_BANK_NAME]=${bankName}&fields[RQ_ACC_NUM]=${accountNumber}`
-        }
-    }
-    console.log(payload);
+export const deleteData = async (req, res) => {
+    const { idContact, idBank } = req.body;
     try {
-        const response = await callMethod('batch',payload); 
-        const data = await response.json();
-        if (!response.ok){
-            return handleError(res, data, response.status, response.statusText);
+        const requisiteEntity = await callMethod(
+            'crm.requisite.list',
+            { 
+                filter: { ENTITY_ID: idContact },
+                select: ['ID'] 
+            }
+        );
+
+        if (requisiteEntity.length > 0) {
+            // Xoá tất cả entity
+            await Promise.all(requisiteEntity.map(entity => 
+                callMethod(
+                    'crm.requisite.delete',
+                    { 
+                        ID: entity.ID 
+                    }
+                )));
         }
-        return res.json(data);
+
+        const deleteContactResult = await callMethod(
+            'crm.contact.delete',
+            {
+                ID: idContact
+            }
+        );
+
+        if (deleteContactResult.error) {
+            throw new Error(`Không thể xóa liên hệ với id: ${idContact}`);
+        }
+
+        return res.json({ success: true, message: "Xóa liên hệ thành công", data: deleteContactResult });
+        
     } catch (error) {
-        return handleError(res, `Lỗi khi thêm: ${error.message}`);
+        return handleError(res, `Lỗi khi xóa dữ liệu: ${error.message}`);
     }
 };
