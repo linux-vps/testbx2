@@ -43,7 +43,9 @@
   * Author: BootstrapMade.com
   * License: https://bootstrapmade.com/license/
   ======================================================== -->
+<style>
 
+</style>
 
 </head>
 
@@ -336,134 +338,190 @@
 <!-- Add Modal -->
 <div class="modal fade" id="Add_Contact" aria-hidden="true" role="dialog">
   <div class="modal-dialog modal-dialog-centered" role="document">
+
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Thêm liên hệ</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="row form-row">
-          <div class="col-12 col-sm-12">
-            <div class="form-group">
-              <label>Họ</label>
-              <input type="text" class="form-control" name="lastName" id="lastName">
+        <!-- Form starts here -->
+        <form id="addContactForm" method="POST">
+          <div class="row form-row">
+            <div class="col-3 col-sm-3">
+              <div class="form-group">
+                <label>Họ</label>
+                <input type="text" class="form-control" name="lastName" id="lastName">
+              </div>
+            </div>
+            <div class="col-9 col-sm-9">
+              <div class="form-group">
+                <label>Tên</label>
+                <input type="text" class="form-control" name="name" id="name">
+              </div>
+            </div>
+            <div class="col-3 col-sm-3">
+              <div class="form-group">
+                <label>Phường/Xã</label>
+                <input type="text" class="form-control" name="ward" id="ward">
+              </div>
+            </div>
+            <div class="col-3 col-sm-3">
+              <div class="form-group">
+                <label>Quận/Huyện</label>
+                <input type="text" class="form-control" name="district" id="district">
+              </div>
+            </div>
+            <div class="col-3 col-sm-3">
+              <div class="form-group">
+                <label>Thành phố</label>
+                <input type="text" class="form-control" name="city" id="city">
+              </div>
+            </div>
+            <div class="col-3 col-sm-3">
+              <div class="form-group">
+                <label>Tỉnh</label>
+                <input type="text" class="form-control" name="province" id="province">
+              </div>
+            </div>
+            <div class="col-4 col-sm-4">
+              <div class="form-group">
+                <label>Số điện thoại</label>
+                <input type="number" class="form-control" name="phoneNumber" id="phoneNumber">
+              </div>
+            </div>
+            <div class="col-8 col-sm-8">
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" id="email">
+              </div>
+            </div>
+            <div class="col-12 col-sm-12">
+              <div class="form-group">
+                <label>Website</label>
+                <input type="text" class="form-control" name="website" id="website">
+              </div>
+            </div>
+            <div class="col-6 col-sm-6">
+              <div class="form-group">
+                <label>Tên ngân hàng</label>
+                <input type="text" class="form-control" name="bankName" id="bankName">
+              </div>
+            </div>
+            <div class="col-6 col-sm-6">
+              <div class="form-group">
+                <label>Số tài khoản</label>
+                <input type="number" class="form-control" name="accountNumber" id="accountNumber">
+              </div>
             </div>
           </div>
-          <div class="col-12 col-sm-12">
-            <div class="form-group">
-              <label>Tên</label>
-              <input type="text" class="form-control" name="firstName" id="firstName">
-            </div>
-          </div>
-          <div class="col-12 col-sm-12">
-            <div class="form-group">
-              <label>Phường/Xã</label>
-              <input type="text" class="form-control" name="ward" id="ward">
-            </div>
-          </div>
-          <div class="col-12 col-sm-12">
-            <div class="form-group">
-              <label>Quận/Huyện</label>
-              <input type="text" class="form-control" name="district" id="district">
-            </div>
-          </div>
-          <div class="col-12 col-sm-12">
-            <div class="form-group">
-              <label>Tỉnh/Thành phố</label>
-              <input type="text" class="form-control" name="city" id="city">
-            </div>
-          </div>
-          <div class="col-12 col-sm-12">
-            <div class="form-group">
-              <label>Số điện thoại</label>
-              <input type="number" class="form-control" name="phoneNumber" id="phoneNumber">
-            </div>
-          </div>
-          <div class="col-12 col-sm-12">
-            <div class="form-group">
-              <label>Email</label>
-              <input type="email" class="form-control" name="email" id="email">
-            </div>
-          </div>
-          <div class="col-12 col-sm-12">
-            <div class="form-group">
-              <label>Website</label>
-              <input type="text" class="form-control" name="website" id="website">
-            </div>
-          </div>
-          <div><br>Thông tin ngân hàng<br></div>
-          <div class="col-12 col-sm-12">
-            <div class="form-group">
-              <label>Tên ngân hàng</label>
-              <input type="text" class="form-control" name="bankName" id="bankName">
-            </div>
-          </div>
-          <div class="col-12 col-sm-12">
-            <div class="form-group">
-              <label>Số tài khoản</label>
-              <input type="number" class="form-control" name="accountNumber" id="accountNumber">
-            </div>
-          </div>
-        </div>
+        </form>
+        <!-- Form ends here -->
       </div>
       
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="button" id="add-btn" class="btn btn-primary">OK</button>
+        <button type="submit" form="addContactForm" class="btn btn-primary">OK</button>
       </div>
+  
     </div>
+
   </div>
 </div>
 <!-- /ADD Modal -->
 
+
 <!-- EDIT Modal -->
 <div class="modal fade" id="Edit_contact" aria-hidden="true" role="dialog">
   <div class="modal-dialog modal-dialog-centered" role="document">
+
     <div class="modal-content">
       <div class="modal-header">
         <h5 class="modal-title">Sửa thông tin liên hệ</h5>
         <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
       </div>
       <div class="modal-body">
-        <div class="row form-row">
-          <div class="col-12 col-sm-12">
-            <div class="form-group">
-              <label>Họ và tên</label>
-              <input type="text" class="form-control" name="studentName" id="editStudentName">
+        <!-- Form starts here -->
+        <form id="editContactForm" method="PUT">
+          <div class="row form-row">
+            <div class="col-3 col-sm-3">
+              <div class="form-group">
+                <label>Họ</label>
+                <input type="text" class="form-control" name="lastName" id="edit-lastName">
+              </div>
             </div>
-          </div>
-          <div class="col-12 col-sm-12">
-            <div class="form-group">
-              <label>SĐT phụ huynh</label>
-              <input type="text" class="form-control" name="parentPhone" id="editParentPhone">
+            <div class="col-9 col-sm-9">
+              <div class="form-group">
+                <label>Tên</label>
+                <input type="text" class="form-control" name="name" id="edit-name">
+              </div>
             </div>
-          </div>
-          <div class="col-12 col-sm-12">
-            <div class="form-group">
-              <label>Tên phụ huynh</label>
-              <input type="text" class="form-control" name="parentName" id="editParentName">
+            <div class="col-3 col-sm-3">
+              <div class="form-group">
+                <label>Phường/Xã</label>
+                <input type="text" class="form-control" name="ward" id="edit-ward">
+              </div>
             </div>
-          </div>
-          <div class="col-12 col-sm-12">
-            <div class="form-group">
-              <label>Email Phụ huynh</label>
-              <input type="email" class="form-control" name="parentEmail" id="editParentEmail">
+            <div class="col-3 col-sm-3">
+              <div class="form-group">
+                <label>Quận/Huyện</label>
+                <input type="text" class="form-control" name="district" id="edit-district">
+              </div>
             </div>
-          </div>
-          <div class="col-12 col-sm-12">
-            <div class="form-group">
-              <label>Ghi chú</label>
-              <input type="text" class="form-control" name="note" id="editNote">
+            <div class="col-3 col-sm-3">
+              <div class="form-group">
+                <label>Thành phố</label>
+                <input type="text" class="form-control" name="city" id="edit-city">
+              </div>
             </div>
+            <div class="col-3 col-sm-3">
+              <div class="form-group">
+                <label>Tỉnh</label>
+                <input type="text" class="form-control" name="province" id="edit-province">
+              </div>
+            </div>
+            <div class="col-4 col-sm-4">
+              <div class="form-group">
+                <label>Số điện thoại</label>
+                <input type="number" class="form-control" name="phoneNumber" id="edit-phoneNumber">
+              </div>
+            </div>
+            <div class="col-8 col-sm-8">
+              <div class="form-group">
+                <label>Email</label>
+                <input type="email" class="form-control" name="email" id="edit-email">
+              </div>
+            </div>
+            <div class="col-12 col-sm-12">
+              <div class="form-group">
+                <label>Website</label>
+                <input type="text" class="form-control" name="website" id="edit-website">
+              </div>
+            </div>
+            <div class="col-6 col-sm-6">
+              <div class="form-group">
+                <label>Tên ngân hàng</label>
+                <input type="text" class="form-control" name="bankName" id="edit-bankName">
+              </div>
+            </div>
+            <div class="col-6 col-sm-6">
+              <div class="form-group">
+                <label>Số tài khoản</label>
+                <input type="number" class="form-control" name="accountNumber" id="edit-accountNumber">
+              </div>
+            </div>
+            <input type="hidden" id="editRowIdContact" name="idContact">
+            <input type="hidden" id="editRowIdBank" name="idBank">
           </div>
-          <input type="hidden" id="editRowId">
-          <input type="hidden" id="editClassname">
-        </div>
+        </form>
+        <!-- Form ends here -->
       </div>
+      
       <div class="modal-footer">
         <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        <button type="submit" id="edit-btn" class="btn btn-primary">OK</button>
+        <button type="submit" form="editContactForm" class="btn btn-primary">OK</button>
       </div>
+  
     </div>
   </div>
 </div>
@@ -539,6 +597,10 @@
     <script src="/dist/main.bundle.js"></script>
     <script src="/dist/styles.bundle.js"></script>
     <script>
+      const resultModal = new bootstrap.Modal(document.getElementById('resultModal'));
+      const resultModalLabel = document.getElementById('resultModalLabel');
+      const resultMessage = document.getElementById('resultMessage');
+      const errorMessage = document.getElementById('errorMessage');
       async function fetchData() {
         let response = await fetch("http://localhost:5000/api/getData");
         const data = await response.json();
@@ -558,8 +620,8 @@
           data: data,
           columns: [
             { data: null, render: (data, type, row, meta) => meta.row + 1 }, // Cột số thứ tự
-            { data: 'NAME' },
-            { data: 'ADDRESS' },
+            { data: 'NAME_FULL' },
+            { data: 'ADDRESS_FULL'},
             { data: 'PHONE' },
             { data: 'EMAIL' },
             { data: 'WEB' },
@@ -570,11 +632,12 @@
               render: (data, type, row) => `
                     <div class="actions" style="display: flex;">
                         <a class="btn btn-sm bg-success-light btn-edit" data-toggle="modal" style="margin-right: 5px;" 
-                          data-id="${row.ID}" data-name="${row.NAME}" href="#Edit_contact">
+                          data-info='{"id_contact":${row.ID_CONTACT}, "id_bank":"${row.ID_BANK}" ,"lastname":"${row.LAST_NAME}","name":"${row.NAME}","ward":"${row.ADDRESS}","district":"${row.ADDRESS_2}","city":"${row.ADDRESS_CITY}","province":"${row.ADDRESS_PROVINCE}","phone":"${row.PHONE}","email":"${row.EMAIL}","web":"${row.WEB}","bankname":"${row.RQ_BANK_NAME}","accountnumber":"${row.RQ_ACC_NUM}"}'
+                          href="#Edit_contact">
                             <i class="fe fe-pencil"></i> Sửa
                         </a>
-                        <a data-toggle="modal" href="#deleteConfirmationModal" data-id="${row.ID}" 
-                          class="btn btn-sm bg-danger-light btn-delete-speciality">
+                        <a data-toggle="modal" href="#deleteConfirmationModal" data-info='{"id_contact":${row.ID_CONTACT}, "id_bank":"${row.ID_BANK}"}'
+                          class="btn btn-sm bg-danger-light btn-delete">
                             <i class="fe fe-trash"></i> Xoá
                         </a>
                     </div>
@@ -583,9 +646,165 @@
           ]
         });
       }
-      document.addEventListener('DOMContentLoaded', fetchData);
+
+      document.getElementById('addContactForm').addEventListener('submit', async function(event) {
+        event.preventDefault(); 
+    
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+        let id_contact_to_delete = null;
+        let id_bank_to_delete = null;
+    
+        try {
+          const response = await fetch('http://localhost:5000/api/addData', {
+            method: 'POST',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          });
+    
+          const result = await response.json();
+          console.log(result.result);
+          // console.log(result.result.result_total);
+          // console.log(result.result.result);
+          if (result.result.result_error && result.result.result_error.length === 0) {
+            // alert('Liên hệ đã được thêm thành công!');
+            $('#Add_Contact').modal('hide');
+            resultModalLabel.innerText = "Thêm liên hệ thành công!";
+            resultMessage.innerText = '';
+            errorMessage.innerText = '';
+            fetchData();
+          } else {
+            // alert('Có lỗi xảy ra: ' + result.result.result_error);
+            resultModalLabel.innerText = "Thêm liên hệ thất bại!";
+            resultMessage.innerText = '';
+            errorMessage.innerText = result.result.result_error;
+          }
+          resultModal.show();
+          setTimeout(() => resultModal.hide(), 5000);
+        } catch (error) {
+          alert('Có lỗi xảy ra khi gửi yêu cầu: ' + error.message);
+        }
+      });
+
+
+      // Function to open edit modal and pre-fill data
+    document.addEventListener('DOMContentLoaded', function() {
+      fetchData();
+      
+      $(document).ready(function() {
+        // fill modal sửa 
+        $('#Edit_contact').on('show.bs.modal', function(event) {
+          var button = $(event.relatedTarget); 
+          var data = button.data('info'); 
+    
+          $('#editRowIdContact').val(data.id_contact); 
+          $('#editRowIdBank').val(data.id_bank); 
+          $('#edit-lastName').val(data.lastname);
+          $('#edit-name').val(data.name);
+          $('#edit-ward').val(data.ward);
+          $('#edit-district').val(data.district);
+          $('#edit-city').val(data.city);
+          $('#edit-province').val(data.province);
+          $('#edit-phoneNumber').val(data.phone);
+          $('#edit-email').val(data.email);
+          $('#edit-website').val(data.web);
+          $('#edit-bankName').val(data.bankname);
+          $('#edit-accountNumber').val(data.accountnumber);
+        });
+
+        // fill modal xoá 
+        $('#deleteConfirmationModal').on('show.bs.modal', function(event) {
+          var button = $(event.relatedTarget); 
+          var data = button.data('info'); 
+
+          id_contact_to_delete = data.id_contact;
+          id_bank_to_delete = data.id_bank;
+        });
+
+      });
+    });
+
+      document.getElementById('editContactForm').addEventListener('submit', async function(event) {
+        event.preventDefault(); 
+    
+        const formData = new FormData(this);
+        const data = Object.fromEntries(formData.entries());
+    
+        try {
+          const response = await fetch('http://localhost:5000/api/updateData', {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json'
+            },
+            body: JSON.stringify(data)
+          });
+    
+          const result = await response.json();
+          console.log(result.result);
+          if (result.result.result_error && result.result.result_error.length === 0) {
+            $('#Edit_Contact').modal('hide');
+            resultModalLabel.innerText = "Cập nhật liên hệ thành công!";
+            resultMessage.innerText = '';
+            errorMessage.innerText = '';
+            fetchData();
+          } else {
+            resultModalLabel.innerText = "Cập nhật liên hệ thất bại!";
+            resultMessage.innerText = '';
+            errorMessage.innerText = result.result.result_error;
+          }
+          resultModal.show();
+          setTimeout(() => resultModal.hide(), 5000);
+        } catch (error) {
+          alert('Có lỗi xảy ra khi gửi yêu cầu: ' + error.message);
+        }
+      });
+
+      document.getElementById('confirm-delete-btn').addEventListener('click', async function(event) {
+        event.preventDefault(); 
+    
+        const body = JSON.stringify({
+          idContact: id_contact_to_delete, 
+          idBank: id_bank_to_delete
+        });
+        fetch('http://localhost:5000/api/deleteData', {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: body
+        })
+        .then(response => response.json())
+        .then(result => {
+          if (result.result.result_error && result.result.result_error.length === 0) {
+            $('#Edit_Contact').modal('hide');
+            resultModalLabel.innerText = "Xoá liên hệ thành công!";
+            resultMessage.innerText = '';
+            errorMessage.innerText = '';
+            fetchData();
+          } else {
+            resultModalLabel.innerText = "Xoá liên hệ thất bại!";
+            resultMessage.innerText = '';
+            errorMessage.innerText = result.result.result_error;
+          }
+          resultModal.show();
+          setTimeout(() => resultModal.hide(), 5000);
+        })
+      .catch(error => {
+        alert('Có lỗi xảy ra khi gửi yêu cầu: ' + error.message);
+      });
+    });    
+
+
+
+
     </script>
 
+
+    <script>
+      
+    </script>
     
 </body>
     

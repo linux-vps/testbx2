@@ -2,6 +2,10 @@
   background-color: #91dcff;
 }
 
+form > div > div {
+  padding-bottom: 20px;
+}
+
 .modal th {
   text-align: left;
 }
