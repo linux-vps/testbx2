@@ -602,7 +602,7 @@
       const protocol = "<%= protocol || null %>";
       const lang = "<%= lang || null %>";
       const appSid = "<%= appSid || null %>";
-      if (appSid!==null){
+      if (domain!==null && appSid!==null){
         alert(`Installed\nDOMAIN: ${domain}\nPROTOCOL: ${protocol}\nLANG: ${lang}\nAPP_SID: ${appSid}`);
       }
       
