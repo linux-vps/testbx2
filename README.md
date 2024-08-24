@@ -6,9 +6,17 @@ https://1550-3-1-203-129.ngrok-free.app
 
 Simple web app to manage contacts and banking details in Bitrix24 app (b24-7w9mjb.bitrix24.vn)
 Using NodeJS, for client and server. Display HTML by simple EJS view engine.
-### About this project:
+### Some documentation about this project:
  1. OAuth 2.0 Protocol:
-     - 
+    https://training.bitrix24.com/support/training/course/?COURSE_ID=169&LESSON_ID=20110
+    https://training.bitrix24.com/rest_help/oauth/index.php
+ 3. Ngrok:
+    https://ngrok.com/download
+ 4. REST
+    https://training.bitrix24.com/rest_help/
+ 6. Batch method:
+    https://training.bitrix24.com/rest_help/general/batch.php
+ 
 ## Install & Upgrade
 paste this section bellow in your terminal.
 ```
