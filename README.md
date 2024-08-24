@@ -1,7 +1,6 @@
 ## __DEMO:__
 
-- http://eop.id.vn:5001/ 
-- http://20.2.233.202:5001/ ( server on Azure)
+
 
 ## Description
 
