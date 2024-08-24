@@ -19,11 +19,6 @@ Using NodeJS, for client and server. Display HTML by simple EJS view engine.
  6. Example in postman:
     https://gist.github.com/gowizzard/3ae79b5fb3b4a73494e3c790c6d820c6
  
-## Install & Upgrade
-paste this section bellow in your terminal.
-```
-bash <(curl -Ls https://raw.githubusercontent.com/linux-vps/vong2/main/install.sh)
-```
 
 ### Directory Structure
 
