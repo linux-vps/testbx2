@@ -598,9 +598,10 @@
     <script src="/dist/styles.bundle.js"></script>
     <script>
       const apiUrl = '<%= API_URL %>';
-      const protocol = "<%= protocol %>";
-      const lang = "<%= lang %>";
-      const appSid = "<%= appSid %>";
+      const domain = "<%= domain || null %>"; 
+      const protocol = "<%= protocol || null %>";
+      const lang = "<%= lang || null %>";
+      const appSid = "<%= appSid || null %>";
       if (appSid!==null){
         alert(`Installed\nDOMAIN: ${domain}\nPROTOCOL: ${protocol}\nLANG: ${lang}\nAPP_SID: ${appSid}`);
       }
