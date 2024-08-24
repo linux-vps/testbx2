@@ -25,7 +25,14 @@ app.use('/assets', express.static(path.join(__dirname, './assets')));
 app.use('/dist', express.static(path.join(__dirname, './dist')));
 
 app.get('/', (req, res) => {
-    res.render('index', { API_URL: API_URL });
+
+    res.render('index', {
+      API_URL: API_URL,
+      domain: "null",
+      protocol: "null",
+      lang: "null",
+      appSid:"null"
+    });
 });
 app.get('/getoauth2', (req, res) => {
   res.send("hello");
