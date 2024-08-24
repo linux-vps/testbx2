@@ -4,7 +4,7 @@ https://1550-3-1-203-129.ngrok-free.app
 
 ## Description
 
-Simple web app to display All name of users in Bitrix24 app (b24-7w9mjb.bitrix24.vn)
+Simple web app to manage contacts and banking details in Bitrix24 app (b24-7w9mjb.bitrix24.vn)
 Using NodeJS, for client and server. Display HTML by simple EJS view engine.
 
 ## Install & Upgrade
