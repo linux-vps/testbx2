@@ -16,6 +16,17 @@ app.use(cors());
 // log requests ra
 app.use(morgan('dev'));
 
+app.post('/install', (req, res) => {
+    const { DOMAIN, PROTOCOL, LANG, APP_SID } = req.query;
+  
+    const currentTime = new Date().toLocaleString();
+    console.log(`App installed at ${currentTime}`);
+    console.log(`DOMAIN: ${DOMAIN}`);
+    console.log(`PROTOCOL: ${PROTOCOL}`);
+    console.log(`LANG: ${LANG}`);
+    console.log(`APP_SID: ${APP_SID}`);
+  });
+
 app.use('/api', apiRoutes);
 app.use(errorHandler);
 app.listen(PORT, () => {

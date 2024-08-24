@@ -39,7 +39,6 @@ app.post('/install', (req, res) => {
   console.log(`PROTOCOL: ${PROTOCOL}`);
   console.log(`LANG: ${LANG}`);
   console.log(`APP_SID: ${APP_SID}`);
-  res.render('index', { API_URL: API_URL });
 });
 
 app.listen(PORT, () => {
