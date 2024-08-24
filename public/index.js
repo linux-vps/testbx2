@@ -39,8 +39,17 @@ app.post('/install', (req, res) => {
   console.log(`PROTOCOL: ${PROTOCOL}`);
   console.log(`LANG: ${LANG}`);
   console.log(`APP_SID: ${APP_SID}`);
-  res.render('index', { API_URL: API_URL });
+
+  // Truyền thông tin tới view
+  res.render('index', {
+    API_URL: API_URL,
+    domain: DOMAIN,
+    protocol: PROTOCOL,
+    lang: LANG,
+    appSid: APP_SID
+  });
 });
+
 
 app.listen(PORT, () => {
   console.log(`http://localhost:${PORT}`);
