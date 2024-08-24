@@ -20,36 +20,6 @@ Using NodeJS, for client and server. Display HTML by simple EJS view engine.
     https://gist.github.com/gowizzard/3ae79b5fb3b4a73494e3c790c6d820c6
  
 
-### Directory Structure
-
-- **Public**: Using NodeJS with EJS view engine. 
-  - `.env`: Environment configuration.
-  - `.gitignore` 
-  - `directory-structure.txt`: directory structure.
-  - `index.js`
-  - `package-lock.json`
-  - `package.json`
-  - **assets**
-    - **img**
-    - **js**
-    - **styles**: Stylesheets ( `style.css`, `style.css.map`, `style.scss`).
-  - **config**: Configuration files ( `config.js`).
-  - **views**: View templates ( `index.ejs`).
-
-- **Server**: API server-side code.
-  - `.env`: Environment configuration.
-  - `.gitignore` 
-  - `directory-structure.txt`: directory structure.
-  - `index.js`
-  - `package-lock.json`
-  - `package.json`
-  - **config**: Configuration files (`config.js`).
-  - **controllers**: handling API.
-    - `employeeController.js`: GET list of users.
-    - `refreshController.js`: GET refresh_token.
-  - **middleware**
-  - **routes**: API route definitions (`index.js`).
-
 ## Installation
 
 ### Step 1: Install NodeJS and NPM using nvm
