@@ -19,4 +19,4 @@ if (!APP_SECRET || !BITRIX24_DOMAIN || !APP_ID || !TOKEN_STORAGE_FILE) {
 
 // else
 export const REFRESH_TOKEN_URL = `${AUTHORIZATION_SERVER}&client_id=${APP_ID}&client_secret=${APP_SECRET}&code=${CODE}&refresh_token=${REFRESH_TOKEN}`;
-
+// https://oauth.bitrix.info/oauth/token/?grant_type=refresh_token

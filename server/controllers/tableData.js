@@ -2,6 +2,26 @@ import  callMethod  from "../utils/BX24.js";
 
 const handleError = (res, error, status = 500, statusText = 'Internal server') => {
     console.error('Error:', error); 
+    if (status == 400 && statusText =='Bad Request' && error.error_description=='Not found'){
+        return res.status(status).json({ 
+            error: error.error_description,
+            error_description: error.error_description, 
+            message: 'Thông tin không tồn tại' });
+    }
+    if (status == 401 && statusText =='Unauthorized'){
+        if(error.error=='invalid_token' && error.error_description=='Unable to get application by token'){
+            return res.status(status).json({ 
+                error: error.error_description,
+                error_description: error.error_description, 
+                message: 'Token không hợp lệ, có thể là do refresh token đã hết hạn' });
+        }
+        if(error.error=='expired_token' && error.error_description=='The access token provided has expired.'){
+            return res.status(status).json({ 
+                error: error.error_description,
+                error_description: error.error_description, 
+                message: 'Token đã hết hạn, vui lòng refresh và sử dụng token mới' });
+        }    
+    }
     return res.status(status).json({ 
         status: status, 
         statusText: statusText, 

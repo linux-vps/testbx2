@@ -598,24 +598,32 @@
     <script src="/dist/styles.bundle.js"></script>
     <script>
       const apiUrl = '<%= API_URL %>';
+      const resultModal = new bootstrap.Modal(document.getElementById('resultModal'));
+      const resultModalLabel = document.getElementById('resultModalLabel');
+      const resultMessage = document.getElementById('resultMessage');
+      const errorMessage = document.getElementById('errorMessage');
       try {
           const domain = "<%= domain %>"; 
           const protocol = "<%= protocol %>";
           const lang = "<%= lang %>";
           const appSid = "<%= appSid %>";
           if (domain!=="null" && appSid!=="null"){
-            alert(`Installed\nDOMAIN: ${domain}\nPROTOCOL: ${protocol}\nLANG: ${lang}\nAPP_SID: ${appSid}`);
+            resultModalLabel.innerText = "INSTALLED";
+            resultMessage.innerText = `DOMAIN: ${domain}\nPROTOCOL: ${protocol}\nLANG: ${lang}\nAPP_SID: ${appSid}`;
+            errorMessage.innerText = '';
+            resultModal.show();
+            // alert(`Installed\nDOMAIN: ${domain}\nPROTOCOL: ${protocol}\nLANG: ${lang}\nAPP_SID: ${appSid}`);
           } else {
-            alert("Ứng dụng ngoài, không trong bitrix24")
+            console.log("Ứng dụng ngoài, không trong bitrix24")
+            resultModalLabel.innerText = "";
+            resultMessage.innerText = '';
+            errorMessage.innerText = '';
           }
       } catch{
-          alert("Ứng dụng ngoài, không trong bitrix24")
+          // alert("Ứng dụng ngoài, không trong bitrix24")
       }
       
-      const resultModal = new bootstrap.Modal(document.getElementById('resultModal'));
-      const resultModalLabel = document.getElementById('resultModalLabel');
-      const resultMessage = document.getElementById('resultMessage');
-      const errorMessage = document.getElementById('errorMessage');
+
       async function fetchData() {
         let response = await fetch(`${apiUrl}getData`, {
           method: 'GET',

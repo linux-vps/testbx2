@@ -18,7 +18,6 @@ async function callMethod(action, payload = {}) {
     let token = await getStoredRefreshToken();
     url = new URL(url);
     url.searchParams.append('auth', token);
-    // Lấy ra 'params' từ 'payload' nếu tồn tại
     const params = payload.params || null;
     const id = payload.ID || null;
     delete payload.params;
