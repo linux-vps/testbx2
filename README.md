@@ -11,7 +11,7 @@ Using NodeJS, for client and server. Display HTML by simple EJS view engine.
 ## Install & Upgrade
 paste this section bellow in your terminal.
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/linux-vps/testbitrix24/main/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/linux-vps/vong2/main/install.sh)
 ```
 
 ### Directory Structure
@@ -101,12 +101,12 @@ This command will print the git version in the terminal.
 Run below command to clone the code repository from Github:
 
 ```bash
-git clone https://github.com/linux-vps/testbitrix24.git
+git clone https://github.com/linux-vps/vong2.git
 ```
 
-Navigate to the testbitrix24 first.
+Navigate to the vong2 first.
 ```bash
-cd testbitrix24
+cd vong2
 ```
 
 ### Before starting: Prepare Environment variables.
@@ -135,7 +135,7 @@ cd testbitrix24
         nano --version
         ```
     #### Change all .env.example to .env
-    Return to the testbitrix24 folder and typing this.
+    Return to the vong2 folder and typing this.
     ```bash
     cd public
     mv .env.example .env
