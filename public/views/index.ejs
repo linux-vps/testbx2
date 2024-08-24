@@ -603,7 +603,12 @@
       const resultMessage = document.getElementById('resultMessage');
       const errorMessage = document.getElementById('errorMessage');
       async function fetchData() {
-        let response = await fetch(`${apiUrl}getData`);
+        let response = await fetch(`${apiUrl}getData`, {
+          method: 'GET',
+          headers: {
+            'ngrok-skip-browser-warning': 'true'
+          }
+        });
         const data = await response.json();
         if ($.fn.dataTable.isDataTable('#contactTable')) {
           $('#contactTable').DataTable().clear().destroy();
@@ -660,6 +665,7 @@
           const response = await fetch(`${apiUrl}addData`, {
             method: 'POST',
             headers: {
+              'ngrok-skip-browser-warning': 'true',
               'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
@@ -737,6 +743,7 @@
           const response = await fetch(`${apiUrl}updateData`, {
             method: 'PUT',
             headers: {
+              'ngrok-skip-browser-warning': 'true',
               'Content-Type': 'application/json'
             },
             body: JSON.stringify(data)
@@ -772,6 +779,7 @@
         fetch(`${apiUrl}deleteData`, {
           method: 'DELETE',
           headers: {
+            'ngrok-skip-browser-warning': 'true',
             'Content-Type': 'application/json'
           },
           body: body
