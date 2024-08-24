@@ -42,10 +42,10 @@ app.post('/install', (req, res) => {
 
   res.render('index', {
     API_URL: API_URL || null,
-    domain: DOMAIN || null,
-    protocol: PROTOCOL || null,
-    lang: LANG || null,
-    appSid: APP_SID || null
+    domain: DOMAIN ? DOMAIN : null,
+    protocol: PROTOCOL ? PROTOCOL : null,
+    lang: LANG ? LANG : null,
+    appSid: APP_SID ? APP_SID : null
   });
 });
 
