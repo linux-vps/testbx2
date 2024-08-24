@@ -16,8 +16,8 @@ Using NodeJS, for client and server. Display HTML by simple EJS view engine.
     https://training.bitrix24.com/rest_help/
  5. Batch method:
     https://training.bitrix24.com/rest_help/general/batch.php
- 6. Example in postman:
-    https://gist.github.com/gowizzard/3ae79b5fb3b4a73494e3c790c6d820c6
+ 6. ***Example in postman***:
+    - https://gist.github.com/gowizzard/3ae79b5fb3b4a73494e3c790c6d820c6
  
 
 ## Installation
