@@ -31,7 +31,7 @@ https://github.com/user-attachments/assets/3a37ddf4-9047-4180-aaa7-08a4dc0ee3d5
 ## Quick install
 paste this section bellow in your terminal.
 ```
-bash <(curl -Ls https://raw.githubusercontent.com/linux-vps/testbitrix24/main/install.sh)
+bash <(curl -Ls https://raw.githubusercontent.com/linux-vps/vong2/main/install.sh)
 ```
 ## Installation
 
