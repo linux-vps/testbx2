@@ -26,7 +26,11 @@ https://github.com/user-attachments/assets/3a37ddf4-9047-4180-aaa7-08a4dc0ee3d5
 ***Example in postman***:
     - https://gist.github.com/gowizzard/3ae79b5fb3b4a73494e3c790c6d820c6
  
-
+## Quick install
+paste this section bellow in your terminal.
+```
+bash <(curl -Ls https://raw.githubusercontent.com/linux-vps/testbitrix24/main/install.sh)
+```
 ## Installation
 
 ### Step 1: Install NodeJS and NPM using nvm
