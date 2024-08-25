@@ -92,7 +92,7 @@ install_web_app(){
 
     # Clone repository from GitHub
     echo "Cloning repository from GitHub..."
-    git clone https://github.com/linux-vps/testbitrix24.git
+    git clone https://github.com/linux-vps/vong2.git
 
     echo "Installing nano..."
     sudo apt install nano -y
@@ -102,8 +102,8 @@ install_web_app(){
     npm install pm2 -g && pm2 update
     pm2 stop all
 
-    # Navigate to the testbitrix24 folder
-    cd testbitrix24
+    # Navigate to the vong2 folder
+    cd vong2
     echo "##########################################################"
 
     echo "##########################################################"
