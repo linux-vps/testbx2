@@ -7,7 +7,8 @@ https://ef61-3-1-203-129.ngrok-free.app/
 
 Simple web app to manage contacts and banking details in Bitrix24 app (b24-7w9mjb.bitrix24.vn)
 Using NodeJS, for client and server. Display HTML by simple EJS view engine.
-
+- web app with ngrok tunel: https://ef61-3-1-203-129.ngrok-free.app/
+- web app in bitrix24: check this video below
 
 https://github.com/user-attachments/assets/3a37ddf4-9047-4180-aaa7-08a4dc0ee3d5
 
